@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Snipe Explorer",
+    "version": "0.0.1",
+    "description": "Eagle-eye exploration for SRA experiments",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.ncbi.nlm.nih.gov/sra/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": []
+}

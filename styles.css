@@ -1,0 +1,83 @@
+/* styles.css */
+
+/* Container for the Snipe button */
+.snipe-button-container {
+    display: inline-block;
+    margin-left: 8px;
+    /* Spacing from the target element */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Snipe Button Styles with Increased Specificity */
+.content a.snipe-button {
+    color: #a93226 !important;
+    /* Dark Red color with !important */
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+/* Ensure visited links retain the dark red color */
+.content a.snipe-button:visited {
+    color: #a93226 !important;
+    /* Dark Red color with !important */
+    text-decoration: underline;
+}
+
+/* Hover Animation */
+.content a.snipe-button:hover {
+    color: #c0392b !important;
+    /* Slightly lighter dark red on hover */
+    text-decoration-color: #c0392b !important;
+    /* Darker underline on hover */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Highlighted element style */
+.snipe-highlight {
+    background-color: rgba(163, 50, 38, 0.1);
+    /* Light dark red background */
+    border-bottom: 2px solid #a93226;
+    /* Dark red underline */
+    padding: 2px 4px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.snipe-highlight:hover {
+    background-color: rgba(163, 50, 38, 0.2);
+    /* Slightly darker on hover */
+    border-bottom-color: #c0392b;
+    /* Darker red underline on hover */
+}
+
+/* Accessibility: Focus styles for keyboard navigation */
+.content a.snipe-button:focus {
+    outline: 2px dashed #c0392b;
+    /* Dark red dashed outline */
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .snipe-button-container {
+        margin-left: 4px;
+        /* Reduced spacing on smaller screens */
+    }
+
+    .content a.snipe-button {
+        font-size: 12px;
+    }
+}
