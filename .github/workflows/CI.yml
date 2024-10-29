@@ -1,0 +1,51 @@
+name: Package and Release Chrome Extension
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check Commit Message
+        id: check_message
+        run: |
+          echo "COMMIT_MESSAGE=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+
+      - name: Get Version from manifest.json
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.version' manifest.json)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Zip Extension Files
+        if: contains(env.COMMIT_MESSAGE, 'make-a-release')
+        run: |
+          mkdir -p dist
+          zip -r dist/snipe-chrome-extension.zip . -x "*.git*" -x "dist/*" -x ".github/*"
+
+      - name: Create GitHub Release
+        if: contains(env.COMMIT_MESSAGE, 'make-a-release')
+        uses: actions/create-release@v1
+        with:
+          tag_name: 'v${{ env.VERSION }}'
+          release_name: 'Chrome Extension Release v${{ env.VERSION }}'
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Release Asset
+        if: contains(env.COMMIT_MESSAGE, 'make-a-release')
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/snipe-chrome-extension.zip
+          asset_name: snipe-chrome-extension-v${{ env.VERSION }}.zip
+          asset_content_type: application/zip
