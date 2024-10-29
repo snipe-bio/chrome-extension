@@ -84,7 +84,7 @@ function processPage() {
     console.log('Processing page...');
 
     // Get the Experiment ID
-    const experimentLink = document.querySelector('a[href^="/sra/SRX"]');
+    const experimentLink = document.querySelector('a[href^="/sra/SRX"], a[href^="/sra/ERX"]');
     const experimentID = experimentLink ? experimentLink.textContent.trim() : null;
 
     // Get the BioProject
