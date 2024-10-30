@@ -1,5 +1,6 @@
 # Snipe Chrome Extension
-![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/bocnoicojedipcfhbhbcldoggionalci?style=plastic&label=Snipe%20Explorer%20Chrome%20Extension&link=https%3A%2F%2Fchromewebstore.google.com%2Fdetail%2Fsnipe-explorer%2Fbocnoicojedipcfhbhbcldoggionalci)
+<a href="https://chromewebstore.google.com/detail/snipe-explorer/bocnoicojedipcfhbhbcldoggionalci" target="_blank"><img alt="Chrome Web Store Version" src="https://img.shields.io/chrome-web-store/v/bocnoicojedipcfhbhbcldoggionalci?label=Snipe%20Explorer%20Chrome%20Extension"></a>
+
 
 View at Chrome Web Store: https://chromewebstore.google.com/detail/snipe-explorer/bocnoicojedipcfhbhbcldoggionalci
 
