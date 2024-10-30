@@ -6,10 +6,12 @@ const taxonomyMap = {
     "9606": "Human",
     "9913": "Cattle",
     "10090": "Mouse",
+    "7955": "Zebrafish",
+    "3702": "Arabidopsis",
 };
 
 // Base URL for Snipe search
-const SNIPE_BASE_URL = 'https://snipe-bio.github.io/explore/dev';
+const SNIPE_BASE_URL = 'https://snipe-bio.github.io/explore/';
 
 // Function to create the "Explore with Snipe" button with specific text
 function createSnipeButton(params, type) {
@@ -85,7 +87,7 @@ function processPage() {
     console.log('Processing page...');
 
     // Get the Experiment ID
-    const experimentLink = document.querySelector('a[href^="/sra/SRX"], a[href^="/sra/ERX"]');
+    const experimentLink = document.querySelector('a[href^="/sra/SRX"], a[href^="/sra/ERX"], a[href^="/sra/DRX"]');
     const experimentID = experimentLink ? experimentLink.textContent.trim() : null;
 
     // Get the BioProject
