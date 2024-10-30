@@ -1,6 +1,9 @@
 # Snipe Chrome Extension
+![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/bocnoicojedipcfhbhbcldoggionalci?style=plastic&label=Snipe%20Explorer%20Chrome%20Extension&link=https%3A%2F%2Fchromewebstore.google.com%2Fdetail%2Fsnipe-explorer%2Fbocnoicojedipcfhbhbcldoggionalci)
 
-This is a Chrome extension that provides a convenient access to [Snipe Explore](https://snipe-bio.github.io/explore/) through the NCBI SRA pages.
+View at Chrome Web Store: https://chromewebstore.google.com/detail/snipe-explorer/bocnoicojedipcfhbhbcldoggionalci
+
+This Chrome extension provides convenient access to [Snipe Explore](https://snipe-bio.github.io/explore/) through the NCBI SRA pages.
 
 ## Local Installation
 
