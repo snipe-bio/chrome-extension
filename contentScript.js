@@ -4,7 +4,8 @@
 const taxonomyMap = {
     "9615": "Canine",
     "9606": "Human",
-    "9913": "Cattle"
+    "9913": "Cattle",
+    "10090": "Mouse",
 };
 
 // Base URL for Snipe search
